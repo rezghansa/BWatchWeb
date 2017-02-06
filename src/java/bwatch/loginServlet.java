@@ -46,7 +46,13 @@ public class loginServlet extends HttpServlet {
          String first = rs.getString("uName");
          String last = rs.getString("pSwrd");
          if(name.equals(first) && password.equals(last)){
-           response.sendRedirect("index.html"); 
+             String userType = rs.getString("Type");
+             if(userType.equalsIgnoreCase("admin"))
+             {
+                 response.sendRedirect("AdminPanel.html");
+             }else{
+                response.sendRedirect("index.html"); 
+             }
          }else{
             out.print("Sorry username or password error");  
             RequestDispatcher rd=request.getRequestDispatcher("userHome.html");  
