@@ -11,17 +11,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Show All Advertisments</title>
+<title>BWatch Admin</title>
 </head>
 <body>
+    
+    <h1>Admin Panel For Advertisment Postings</h1>
     <table>
         <thead>
             <tr>
-                <th>Student ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Course</th>
-                <th>Year</th>
+                <th>Advertisment ID</th>
+                <th>Title Name</th>
+                <th>Position Name</th>
+                <th>Description</th>
+                <th>Country</th>
+                <th>Category</th>
+                <th>Salary</th>
+                <th>Job Offers/Features</th>
+                <th>Job Status</th>
+                <th>Job Active</th>
                 <th colspan="2">Action</th>
             </tr>
         </thead>
@@ -30,19 +37,24 @@
                 <tr>
                     <td><c:out value="${job.jobId}" /></td>
                     <td><c:out value="${job.jobtitle}" /></td>
-                    <td><c:out value="${job.jobtitle}" /></td>
-                    <td><c:out value="${job.jobtitle}" /></td>
-                    <td><c:out value="${job.jobtitle}" /></td>
+                    <td><c:out value="${job.jobPosition}" /></td>
+                    <td><c:out value="${job.jobDescription}" /></td>
+                    <td><c:out value="${job.jobCountry}" /></td>
+                    <td><c:out value="${job.jobCategory}" /></td>
+                    <td><c:out value="${job.jobSalary}" /></td>
+                    <td><c:out value="${job.jobFeatures}" /></td>
+                    <td><c:out value="${job.jobStatus}" /></td>
+                    <td><c:out value="${job.jobFlag}" /></td>
                     <td><a
-                        href="AdvertismentController.do?action=edit&jobId=<c:out value="${student.jobId }"/>">Update</a></td>
+                        href="AdvertismentController?action=edit&jobId=<c:out value="${job.jobId}"/>">Update</a></td>
                     <td><a
-                        href="AdvertismentController.do?action=delete&jobId=<c:out value="${student.jobId }"/>">Delete</a></td>
+                        href="AdvertismentController?action=delete&jobId=<c:out value="${job.jobId}"/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
     <p>
-        <a href="AdvertismentController.do?action=insert">Add Student</a>
+        <a href="AdvertismentController?action=insert">Add Student</a>
     </p>
 </body>
 </html>
