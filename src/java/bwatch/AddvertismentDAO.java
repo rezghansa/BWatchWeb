@@ -13,9 +13,9 @@ import java.util.List;
  */
 public interface AddvertismentDAO {
     
-    public void addJob( Addvertisments student );
+    public void addJob( JobClass student );
     public void deleteJob( int studentId );
-    public void updateJob( Addvertisments student );
-    public List<Addvertisments> getAllStudents();
-    public Addvertisments getJobById( int studentId );
+    public void updateJob( JobClass student );
+    public List<JobClass> getAllStudents();
+    public JobClass getJobById( int studentId );
 }

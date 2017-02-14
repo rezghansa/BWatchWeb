@@ -20,6 +20,15 @@ public class JobClass {
     private String jobFeatures      =   null;
     private String jobStatus        =   null;
     private String jobFlag          =   null;
+    private int    jobId;
+    
+    public int getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(int jobId) {
+        this.jobId = jobId;
+    }
     
     
     public String createJSONObject(){
@@ -103,5 +112,10 @@ public class JobClass {
     public void setJobFlag(String jobFlag) {
         this.jobFlag = jobFlag;
     }
+    
+    public String jobString(){
+        return (this.jobPosition+","+this.jobtitle+","+this.jobCategory+","+this.jobCountry+","+
+                this.jobDescription+","+this.jobSalary+","+this.jobFeatures);
+    }  
        
 }
