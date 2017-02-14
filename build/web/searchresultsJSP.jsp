@@ -53,9 +53,14 @@
             <p class="lead"><% out.println(category.getJobDescription()); %></p>
             <hr class="my-4">
             <p><% out.println(category.getJobFeatures());%></p>
+           
+            <form action="ApplyForPosition" method="post">
             <p class="lead">
-              <a class="btn btn-primary btn-lg" href="#" role="button">Apply for this Position</a>
+                <c:set var="jobId" value="${category.jobId}" />
+              <button class="btn btn-primary btn-lg" href="#" role="button">Apply for this Position</button>
             </p>
+            </form>
+            
         </div>
         <div class="container">
             <div class="row">

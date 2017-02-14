@@ -53,6 +53,7 @@ public class MoreSearch extends HttpServlet {
             String jobFeatures = rs.getString("jobFeatures");
             String jobStatus = rs.getString("jobStatus");
             String jobFlag = rs.getString("jobFlag");
+            int jobId = rs.getInt("jobId");
             
             JSONObject tempJob = new JSONObject();
             tempJob.put("jobCategory",jobCategory);
@@ -64,6 +65,7 @@ public class MoreSearch extends HttpServlet {
             tempJob.put("jobSalary",jobSalary);
             tempJob.put("jobStatus",jobStatus);
             tempJob.put("jobtitle",jobtitle);
+            tempJob.put("jobId",jobId);
             
             
             JobClass tempJJob = new JobClass();
@@ -76,6 +78,7 @@ public class MoreSearch extends HttpServlet {
             tempJJob.setJobCountry(jobCountry);
             tempJJob.setJobCategory(jobCategory);
             tempJJob.setJobtitle(jobtitle);  
+            tempJJob.setJobId(jobId);
             listarrJobs.add(tempJJob);
             listJobs.put(tempJob);        
         }

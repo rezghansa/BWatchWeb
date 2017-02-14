@@ -86,6 +86,7 @@ public class JobSearch extends HttpServlet {
             String jobFeatures = rs.getString("jobFeatures");
             String jobStatus = rs.getString("jobStatus");
             String jobFlag = rs.getString("jobFlag");
+            int jobId = rs.getInt("jobId");
             
             if(jobFlag.equalsIgnoreCase("0")){
                 JSONObject tempJob = new JSONObject();
@@ -98,6 +99,7 @@ public class JobSearch extends HttpServlet {
                 tempJob.put("jobSalary",jobSalary);
                 tempJob.put("jobStatus",jobStatus);
                 tempJob.put("jobtitle",jobtitle);
+                tempJob.put("jobId",jobId);
 
 
                 JobClass tempJJob = new JobClass();
@@ -109,7 +111,8 @@ public class JobSearch extends HttpServlet {
                 tempJJob.setJobDescription(jobDescription);
                 tempJJob.setJobCountry(jobCountry);
                 tempJJob.setJobCategory(jobCategory);
-                tempJJob.setJobtitle(jobtitle);  
+                tempJJob.setJobtitle(jobtitle); 
+                tempJJob.setJobId(jobId);
                 listarrJobs.add(tempJJob);
                 listJobs.put(tempJob);   
             }
