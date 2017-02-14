@@ -56,7 +56,7 @@
            
             <form action="ApplyForPosition" method="post">
             <p class="lead">
-                <c:set var="jobId" value="${category.jobId}" />
+                <input type="hidden" name="jobId" value="<%= category.getJobId() %>">
               <button class="btn btn-primary btn-lg" href="#" role="button">Apply for this Position</button>
             </p>
             </form>
