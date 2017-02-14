@@ -91,7 +91,7 @@ public class AdvertismentController extends HttpServlet {
         }
         else {
             forward = lIST_STUDENT;
-            request.setAttribute("students", dao.getAllStudents());
+            request.setAttribute("jobs", dao.getAllStudents());
         }
         RequestDispatcher view = request.getRequestDispatcher( forward );
         view.forward(request, response);
@@ -122,7 +122,7 @@ public class AdvertismentController extends HttpServlet {
             dao.updateJob(student);
         }
         RequestDispatcher view = request.getRequestDispatcher( lIST_STUDENT );
-        request.setAttribute("job", dao.getAllStudents());
+        request.setAttribute("jobs", dao.getAllStudents());
         view.forward(request, response);
     }
 

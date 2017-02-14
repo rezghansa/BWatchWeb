@@ -26,17 +26,17 @@
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${students}" var="student">
+            <c:forEach items="${jobs}" var="job">
                 <tr>
-                    <td><c:out value="${student.studentId}" /></td>
-                    <td><c:out value="${student.firstName}" /></td>
-                    <td><c:out value="${student.lastName}" /></td>
-                    <td><c:out value="${student.course}" /></td>
-                    <td><c:out value="${student.year}" /></td>
+                    <td><c:out value="${job.jobId}" /></td>
+                    <td><c:out value="${job.jobtitle}" /></td>
+                    <td><c:out value="${job.jobtitle}" /></td>
+                    <td><c:out value="${job.jobtitle}" /></td>
+                    <td><c:out value="${job.jobtitle}" /></td>
                     <td><a
-                        href="AdvertismentController.do?action=edit&studentId=<c:out value="${student.studentId }"/>">Update</a></td>
+                        href="AdvertismentController.do?action=edit&jobId=<c:out value="${student.jobId }"/>">Update</a></td>
                     <td><a
-                        href="AdvertismentController.do?action=delete&studentId=<c:out value="${student.studentId }"/>">Delete</a></td>
+                        href="AdvertismentController.do?action=delete&jobId=<c:out value="${student.jobId }"/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </tbody>

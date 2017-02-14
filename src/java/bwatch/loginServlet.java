@@ -49,7 +49,8 @@ public class loginServlet extends HttpServlet {
              String userType = rs.getString("Type");
              if(userType.equalsIgnoreCase("admin"))
              {
-                 response.sendRedirect("AdminPanel.html");
+                 //getServletContext().getRequestDispatcher("/AdminPanel.jsp").forward(request, response);
+                 response.sendRedirect("AdminPanel.jsp");
              }else{
                 response.sendRedirect("index.html"); 
              }

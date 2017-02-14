@@ -8,6 +8,17 @@
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AdvertismentController</servlet-name>
+        <servlet-class>bwatch.AdvertismentController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AdvertismentController</servlet-name>
+        <url-pattern>/AdvertismentController</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
