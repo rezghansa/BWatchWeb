@@ -114,8 +114,8 @@ public class JobClass {
     }
     
     public String jobString(){
-        return (this.jobPosition+","+this.jobtitle+","+this.jobCategory+","+this.jobCountry+","+
-                this.jobDescription+","+this.jobSalary+","+this.jobFeatures);
+        return ("'"+this.jobPosition+"','"+this.jobtitle+"','"+this.jobCategory+"','"+this.jobCountry+"','"+
+                this.jobDescription+"','"+this.jobSalary+"','"+this.jobFeatures+"'");
     }  
        
 }

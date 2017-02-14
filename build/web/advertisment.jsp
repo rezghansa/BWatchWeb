@@ -18,43 +18,47 @@
     <form action="AdvertismentController" method="post">
         <fieldset>
             <div>
-                <label for="studentId">Job ID</label> <input type="text"
-                    name="studentId" value="<c:out value="${job.jobId}" />"
-                    readonly="readonly" placeholder="Advertisment ID" />
+                <label for="jobId">Job ID</label> <input type="text"
+                    name="jobId" value="<c:out value="${job.jobId}" />"
+                    readonly="readonly" placeholder="jobId" />
             </div>
             <div>
-                <label for="firstName">Title Name</label> <input type="text"
-                    name="firstName" value="<c:out value="${job.jobtitle}" />"
-                    placeholder="First Name" />
+                <label for="title">Title Name</label> <input type="text"
+                    name="title" value="<c:out value="${job.jobtitle}" />"
+                    placeholder="title" />
             </div>
             <div>
-                <label for="lastName">Position Name</label> <input type="text"
-                    name="lastName" value="<c:out value="${job.jobPosition}" />"
-                    placeholder="Last Name" />
+                <label for="position">Position Name</label> <input type="text"
+                    name="position" value="<c:out value="${job.jobPosition}" />"
+                    placeholder="position" />
             </div>
             <div>
-                <label for="course">Description</label> <input type="text" name="course"
-                    value="<c:out value="${job.jobDescription}" />" placeholder="Course" />
+                <label for="description">Description</label> <input type="text" name="description"
+                    value="<c:out value="${job.jobDescription}" />" placeholder="description" />
             </div>
             <div>
-                <label for="year">Country</label> <input type="text" name="year"
-                    value="<c:out value="${job.jobCountry}" />" placeholder="Year" />
+                <label for="country">Country</label> <input type="text" name="country"
+                    value="<c:out value="${job.jobCountry}" />" placeholder="country" />
             </div>
             <div>
-                <label for="year">Category</label> <input type="text" name="year"
-                    value="<c:out value="${job.jobCategory}" />" placeholder="Year" />
+                <label for="category">Category</label> <input type="text" name="category"
+                    value="<c:out value="${job.jobCategory}" />" placeholder="category" />
             </div>
             <div>
-                <label for="year">Salary</label> <input type="text" name="year"
-                    value="<c:out value="${job.jobSalary}" />" placeholder="Year" />
+                <label for="salary">Salary</label> <input type="text" name="salary"
+                    value="<c:out value="${job.jobSalary}" />" placeholder="salary" />
             </div>
             <div>
-                <label for="year">Features or Job Options</label> <input type="text" name="year"
-                    value="<c:out value="${job.jobFeatures}" />" placeholder="Year" />
+                <label for="features">Features or Job Options</label> <input type="text" name="features"
+                    value="<c:out value="${job.jobFeatures}" />" placeholder="features" />
             </div>
             <div>
-                <label for="year">Job Status(A-Active/P-Pending/F-Finished)</label> <input type="text" name="year"
-                    value="<c:out value="${job.jobStatus}" />" placeholder="Year" />
+                <label for="status">Job Status(A-Active/P-Pending/F-Finished)</label> <input type="text" name="status"
+                    value="<c:out value="${job.jobStatus}" />" placeholder="status" />
+            </div>
+            <div>
+                <label for="flag">Job Flag(0-Active/1-Deactive)</label> <input type="text" name="flag"
+                    value="<c:out value="${job.jobFlag}" />" placeholder="flag" />
             </div>
             <div>
                 <input type="submit" value="Submit" />

@@ -110,16 +110,25 @@ public class AdvertismentController extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         
-        JobClass student = new JobClass();
-        student.setJobCategory(request.getParameter( "category" ) );
-        
+        JobClass job = new JobClass();
+
+        job.setJobCategory(request.getParameter( "category" ) );
+        job.setJobCountry(request.getParameter( "country" ) );
+        job.setJobDescription(request.getParameter( "description" ) );
+        job.setJobFeatures(request.getParameter( "features" ));
+        job.setJobFlag(request.getParameter( "flag" ));
+        job.setJobPosition(request.getParameter( "position" ));
+        job.setJobSalary(request.getParameter( "salary" ));
+        job.setJobStatus(request.getParameter( "status" ));
+        job.setJobtitle(request.getParameter( "title" ));
+
         String studentId = request.getParameter("jobId");
  
         if( studentId == null || studentId.isEmpty() )
-            dao.addJob(student);
+            dao.addJob(job);
         else {
-            student.setJobId(Integer.parseInt(studentId) );
-            dao.updateJob(student);
+            job.setJobId(Integer.parseInt(request.getParameter( "jobId" )));
+            dao.updateJob(job);
         }
         RequestDispatcher view = request.getRequestDispatcher( lIST_STUDENT );
         request.setAttribute("jobs", dao.getAllStudents());

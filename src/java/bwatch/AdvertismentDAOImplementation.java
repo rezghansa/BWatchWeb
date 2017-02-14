@@ -23,7 +23,7 @@ public class AdvertismentDAOImplementation implements AddvertismentDAO{
 
     @Override
     public void addJob(JobClass adversimnt) {
-        String advertStr = adversimnt.jobString()+",A,0";
+        String advertStr = adversimnt.jobString()+",'A',0";
         String insetJobSql = "insert into jobs(jobposition,jobtitle,jobCategory,"
                 + "jobCountry,jobDescription,jobSalary,jobFeatures,"
                 + "jobStatus,jobFlag) values("+advertStr+") ";
@@ -39,12 +39,12 @@ public class AdvertismentDAOImplementation implements AddvertismentDAO{
 
     @Override
     public void updateJob(JobClass add) {
-       String query = "update jobs set jobposition="+add.getJobPosition()+", "
-               + "jobtitle="+add.getJobtitle()+", jobCategory="+add.getJobCategory()+", "
-               + "jobCountry="+add.getJobCountry()+" , jobDescription ="+add.getJobDescription()+","
-               + "jobDescription ="+add.getJobDescription()+","
-               + "jobSalary ="+add.getJobSalary()+",jobFeatures="+add.getJobFeatures()+","
-                + "jobStatus ="+add.getJobStatus()+",jobFlag="+add.getJobFlag()+" "
+       String query = "update jobs set jobposition= '"+add.getJobPosition()+" ', "
+               + "jobtitle= '"+add.getJobtitle()+"', jobCategory='"+add.getJobCategory()+"', "
+               + "jobCountry= '"+add.getJobCountry()+"' , jobDescription ='"+add.getJobDescription()+"',"
+               + "jobDescription ='"+add.getJobDescription()+"',"
+               + "jobSalary ='"+add.getJobSalary()+"',jobFeatures='"+add.getJobFeatures()+"',"
+                + "jobStatus ='"+add.getJobStatus()+"',jobFlag="+add.getJobFlag()+" "
                + "where jobId="+add.getJobId();
        DbUtil.insertion(query);
     }
