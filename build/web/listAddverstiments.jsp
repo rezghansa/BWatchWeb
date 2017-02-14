@@ -54,7 +54,7 @@
         </tbody>
     </table>
     <p>
-        <a href="AdvertismentController?action=insert">Add Student</a>
+        <a href="AdvertismentController?action=insert">Add Vacancy Add</a>
     </p>
 </body>
 </html>
