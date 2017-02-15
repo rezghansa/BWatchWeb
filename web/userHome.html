@@ -51,21 +51,21 @@
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="/" method="post">
+          <form action="SignUp" method="post">
           
           <div class="top-row">
             <div class="field-wrap">
               <label>
                 First Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" />
+              <input type="text" id="fName" name="fName" required autocomplete="off" />
             </div>
         
             <div class="field-wrap">
               <label>
                 Last Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off"/>
+              <input type="text" id="lName" name="lName" required autocomplete="off"/>
             </div>
           </div>
 
@@ -73,14 +73,21 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email" required autocomplete="off"/>
+              <input type="email" id="emailId" name="emailId" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Telephone Number<span class="req">*</span>
+            </label>
+              <input type="tel" id="telepN" name="telepN"  required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password" required autocomplete="off"/>
+              <input type="password" id="pWrd" name="pWrd" required autocomplete="off"/>
           </div>
           
           <button type="submit" class="button button-block"/>Get Started</button>
@@ -92,7 +99,7 @@
           <div id="login">   
             <h1>Welcome Back!</h1>
 
-            <form method="get" action="loginServlet">
+            <form method="post" action="loginServlet">
 
                 <div class="field-wrap">
                     <label>
