@@ -39,7 +39,7 @@ public class loginServlet extends HttpServlet {
         String password  = request.getParameter("password");
         
         DbUtil dbUtil = new DbUtil();
-        ResultSet rs = DbUtil.readData("select * from userLogin where uName ='"+name+"'");
+        ResultSet rs = DbUtil.readData("select * from userlogin where uName ='"+name+"'");
         
         try{
         while(rs.next()){
