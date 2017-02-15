@@ -4,6 +4,8 @@
     Author     : hansa
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="bwatch.DbUtil"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -37,9 +39,55 @@
     </div>
     
        <h1>Applied Candidates Report</h1>
- 
-            
-            
+       <table>
+        <thead>
+            <td><center><b>Candidate Name</b></td>
+            <td><center><b>Telephone</b></center></td>
+            <td><center><b>Position</b></center></td>
+            <td><center><b>Country</b></center></td>
+            <td><center><b>Title</b></center></td>
+            <td><center><b>Job Id</b></center></td>
+        </thead>
+        <tbody>
+        <%
+            try
+            {
+                    DbUtil dbconn=new DbUtil();
+                  
+                    String sqlString = "select u.FullName as full,u.telephone as tel,j.jobPosition as posi,j.jobCountry as con,j.jobtitle as til,j.jobId as jobId from blackwatch.jobsbyuser ju,blackwatch.jobs as j, blackwatch.userlogin as u where (ju.jobId = j.jobId and u.uId = ju.userId) and j.jobFlag != 1 and j.jobStatus != 'F'";
+                    
+                    ResultSet rs=DbUtil.readData(sqlString);
+
+                    if(!rs.isBeforeFirst())
+                    {
+                        %>
+                            <tr>
+                            <td colspan="3"><center><%out.print("No Candidates Applied"); %></center></td>
+                            </tr>
+                        <%
+                    }    
+
+                    while(rs.next())
+                    {   
+                %>
+                        <tr>
+                            <td><center><%out.print(rs.getString("full")); %></center></td>
+                            <td><center><%out.print(rs.getString("tel")); %></center></td>
+                            <td><center><%out.print(rs.getString("posi")); %></center></td>
+                            <td><center><%out.print(rs.getString("con")); %></center></td>
+                            <td><center><%out.print(rs.getString("til")); %></center></td>
+                            <td><center><%out.print(rs.getString("jobId")); %></center></td>
+                        </tr>
+                <%
+                    }
+                %>
+                <%
+                                rs.close();
+                        }catch(Exception e){e.printStackTrace();}    
+                        
+                    %>
+      </tbody>
+       </table>
             <!-- copyright section -->
 <div class="copyright">
   <div class="container">
