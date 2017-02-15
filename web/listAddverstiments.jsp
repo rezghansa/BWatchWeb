@@ -30,10 +30,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.html#home" class="smoothScroll">HOME</a></li>
         <li><a href="index.html#service" class="smoothScroll">JOBS</a></li>
-        <li><a href="index.html#about" class="smoothScroll">ABOUT</a></li>
         <li><a href="index.html#portfolio" class="smoothScroll">CLIENTS</a></li>
         <li><a href="index.html#pricing" class="smoothScroll">VACANCIES</a></li>
-        <li><a href="index.html#contact" class="smoothScroll">CONTACT</a></li>
+        <li><a href="appliedCandidatesList.jsp" class="smoothScroll">Applied Candidates</a></li>
         <a href="userHome.html"><img src="images/user.png"/></a>
       </ul>
     </div>

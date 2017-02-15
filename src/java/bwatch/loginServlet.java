@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -46,6 +47,9 @@ public class loginServlet extends HttpServlet {
          String first = rs.getString("uName");
          String last = rs.getString("pSwrd");
          if(name.equals(first) && password.equals(last)){
+             Integer userId = rs.getInt("uId");
+             HttpSession session=request.getSession();  
+             session.setAttribute("logedUser",userId);  
              String userType = rs.getString("Type");
              if(userType.equalsIgnoreCase("admin"))
              {

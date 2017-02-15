@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,16 +34,67 @@ public class ApplyForPosition extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ApplyForPosition</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ApplyForPosition at " + request.getParameter("jobId") + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            
+            HttpSession session=request.getSession(false);  
+            if(session!=null){  
+                Integer userId =(Integer)session.getAttribute("logedUser");
+                String jobId = request.getParameter("jobId");
+                if(userId != null){
+                out.println("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">");
+                out.println("<link rel=\"stylesheet\" href=\"css/font-awesome.min.css\">");
+                out.println("<link rel=\"stylesheet\" href=\"css/nivo-lightbox.css\">");
+                out.println("<link rel=\"stylesheet\" href=\"css/nivo_themes/default/default.css\">");
+                out.println("<link rel=\"stylesheet\" href=\"css/intense-style.css\">");
+                out.println("<link rel=\"stylesheet\" href=\"css/style.css\">");
+                out.println("<title>Welcome to BlackWatch</title>");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("    <div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">");
+                out.println("  <div class=\"container\">");
+                out.println("    <div class=\"navbar-header\">");
+                out.println("      <button class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\"><span class=\"icon icon-bar\"></span> <span class=\"icon icon-bar\"></span> <span class=\"icon icon-bar\"></span></button>");
+                out.println("      <a><img src=\"images/logofinal.jpg\" class=\"img-responsive\"/></a></div>");
+                out.println("    <div class=\"collapse navbar-collapse\">");
+                out.println("      <ul class=\"nav navbar-nav navbar-right\">");
+                out.println("       <li><a href=\"index.html#home\" class=\"smoothScroll\">HOME</a></li>");
+                out.println("        <li><a href=\"index.html#service\" class=\"smoothScroll\">JOBS</a></li>");
+                out.println("        <li><a href=\"index.html#about\" class=\"smoothScroll\">ABOUT</a></li>");
+                out.println("        <li><a href=\"index.html#portfolio\" class=\"smoothScroll\">CLIENTS</a></li>");
+                out.println("        <li><a href=\"index.html#pricing\" class=\"smoothScroll\">VACANCIES</a></li>");
+                out.println("        <li><a href=\"index.html#contact\" class=\"smoothScroll\">CONTACT</a></li>");
+                out.println("        <a href=\"userHome.html\"><img src=\"images/user.png\"/></a>");
+                out.println("      </ul>");
+                out.println("    </div>");
+                out.println("  </div>");
+                out.println("</div>");
+                out.println("<div id=\"searchMID\">");
+                out.println(" <div class=\"container\">");
+                String applyInsertSql = "insert into jobsbyuser(userId,jobId) values("+userId+","+Integer.parseInt(jobId)+")";
+                DbUtil db = new DbUtil();
+                DbUtil.insertion(applyInsertSql);
+                out.println("<h1>You are SucessFully Applied for the Position</h1>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("<div class=\"copyright\">");
+                out.println("  <div class=\"container\">");
+                out.println("    <div class=\"row\">");
+                out.println("      <div class=\"col-md-12 col-sm-12\">");
+                out.println("        <p>&copy; Intense 7 . All Rights Reserved | Design: <a target=\"_blank\" rel=\"nofollow\" href=\"http://www.intense7.com\">intense7</a></p>");
+                out.println("      </div>");
+                out.println("    </div>");
+                out.println("  </div>");
+                out.println("</div>");
+                out.println("</body>");
+                out.println("</html>");
+                }else{
+                    out.println("<h1> You are not logged in or sign up please login</h1>");
+                    response.sendRedirect("userHome.html"); 
+                }             
+            }else{
+                /* TODO output your page here. You may use following sample code. */  
+                out.println("<h1> You are not logged in or sign up please login</h1>");
+                response.sendRedirect("userHome.html"); 
+            }
         }
     }
 
