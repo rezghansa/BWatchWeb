@@ -30,7 +30,7 @@
         <li><a href="index.html#service" class="smoothScroll">JOBS</a></li>
         <li><a href="index.html#about" class="smoothScroll">ABOUT</a></li>
         <li><a href="index.html#portfolio" class="smoothScroll">CLIENTS</a></li>
-        <li><a href="index.html#pricing" class="smoothScroll">VACANCIES</a></li>
+        <li><a href="AdminPanel.jsp" class="smoothScroll">Add Vacancies</a></li>
         <li><a href="index.html#contact" class="smoothScroll">CONTACT</a></li>
         <a href="userHome.html"><img src="images/user.png"/></a>
       </ul>
