@@ -54,7 +54,7 @@
             {
                     DbUtil dbconn=new DbUtil();
                   
-                    String sqlString = "select u.FullName as full,u.telephone as tel,j.jobPosition as posi,j.jobCountry as con,j.jobtitle as til,j.jobId as jobId from blackwatch.jobsbyuser ju,blackwatch.jobs as j, blackwatch.userlogin as u where (ju.jobId = j.jobId and u.uId = ju.userId) and j.jobFlag != 1 and j.jobStatus != 'F'";
+                    String sqlString = "select u.FullName as full,u.telephone as tel,j.jobPosition as posi,j.jobCountry as con,j.jobtitle as til,j.jobId as jobId from jobsbyuser ju,jobs as j, userlogin as u where (ju.jobId = j.jobId and u.uId = ju.userId) and j.jobFlag != 1 and j.jobStatus != 'F'";
                     
                     ResultSet rs=DbUtil.readData(sqlString);
 
